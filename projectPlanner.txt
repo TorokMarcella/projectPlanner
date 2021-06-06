@@ -1,0 +1,22 @@
+create database ProjectPlanner
+
+create table Users(
+    id int not null AUTO_INCREMENT,
+    name varchar(100) not null,
+    email varchar(50),
+    PRIMARY KEY(id))
+
+create table Project(
+    id int not null AUTO_INCREMENT,
+    project_name varchar(100) not null,
+    start_date date,
+    end_date date,
+    created_by int,
+    PRIMARY KEY(id))
+
+create table Task(
+    id int not null AUTO_INCREMENT,
+    task_name varchar(100) not null,
+    project_id int,
+    owner_id int,
+    primary key(id))

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blokkzaro_2.view.ViewController">
+   <children>
+      <TabPane fx:id="projectTab" layoutX="158.0" layoutY="89.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Users">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="200.0" layoutY="69.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Pane layoutX="-12.0" layoutY="50.0" prefHeight="369.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ComboBox fx:id="userCombo" layoutX="43.0" layoutY="139.0" onAction="#selectUser" prefWidth="150.0" />
+                                          <Label layoutX="68.0" layoutY="79.0" text="Select a user">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="userButton" layoutX="73.0" layoutY="338.0" mnemonicParsing="false" onAction="#addNewUser" text="Add new user" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Pane layoutX="84.0" layoutY="85.0" prefHeight="369.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TableView fx:id="userTable" layoutX="-4.0" layoutY="68.0" prefHeight="503.0" prefWidth="564.0" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Projects and Tasks">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29949874686716793" layoutX="200.0" layoutY="106.0" prefHeight="371.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="573.0" prefWidth="226.0">
+                                 <children>
+                                    <Label layoutX="87.0" layoutY="14.0" text="Projects">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="projectCombo" layoutX="42.0" layoutY="175.0" onAction="#selectProject" prefWidth="150.0" />
+                                    <Label layoutX="70.0" layoutY="125.0" text="Select a project">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="projectButton" layoutX="73.0" layoutY="371.0" mnemonicParsing="false" onAction="#addNewProject" text="Add new project" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="569.0" prefWidth="484.0">
+                                 <children>
+                                    <Label layoutX="257.0" layoutY="14.0" text="Tasks">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="taskLabel" layoutX="211.0" layoutY="232.0" text="Please select a project">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane fx:id="taskPane" layoutX="-4.0" layoutY="113.0" prefHeight="463.0" prefWidth="564.0" visible="false">
+                                       <children>
+                                          <TableView fx:id="taskTable" layoutX="-1.0" layoutY="53.0" prefHeight="400.0" prefWidth="565.0" />
+                                       </children>
+                                    </Pane>
+                                    <Button fx:id="taskButton" layoutX="234.0" layoutY="113.0" mnemonicParsing="false" onAction="#addNewTask" text="Add new task" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Pane fx:id="userPane" layoutX="97.0" layoutY="51.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="idTextField" layoutX="455.0" layoutY="216.0" />
+            <TextField fx:id="nameTextField" layoutX="454.0" layoutY="289.0" />
+            <TextField fx:id="emailTextField" layoutX="454.0" layoutY="360.0" />
+            <Label layoutX="346.0" layoutY="124.0" text="Add new user">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="240.0" layoutY="219.0" text="ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="235.0" layoutY="290.0" text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="234.0" layoutY="363.0" text="E-mail">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="saveUserButton" layoutX="326.0" layoutY="486.0" mnemonicParsing="false" onAction="#addNewUser" text="Save" />
+            <Button fx:id="closeButton" layoutX="503.0" layoutY="486.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Cancel" />
+         </children>
+      </Pane>
+      <Pane fx:id="projectPane" layoutX="105.0" layoutY="16.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="idProjectTextField" layoutX="373.0" layoutY="106.0" />
+            <TextField fx:id="projectNameTextField" layoutX="373.0" layoutY="174.0" />
+            <TextField fx:id="startProjectTextField" layoutX="373.0" layoutY="243.0" />
+            <TextField fx:id="endProjectTextField" layoutX="373.0" layoutY="321.0" />
+            <TextField fx:id="createdProjectTextField" layoutX="373.0" layoutY="389.0" />
+            <Label layoutX="335.0" layoutY="26.0" text="Add new Project">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="165.0" layoutY="108.0" text="ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="124.0" layoutY="176.0" text="Project name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="134.0" layoutY="246.0" text="Start date">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="137.0" layoutY="323.0" text="End date">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="131.0" layoutY="391.0" text="Created by">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="saveProjectButton" layoutX="239.0" layoutY="491.0" mnemonicParsing="false" onAction="#addNewProject" text="Save">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="closeButton" layoutX="529.0" layoutY="491.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Cancel">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <DatePicker layoutX="577.0" layoutY="244.0" />
+            <DatePicker layoutX="577.0" layoutY="321.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="newTaskPane" layoutX="105.0" layoutY="43.0" prefHeight="600.0" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="taskIdTextField" layoutX="519.0" layoutY="124.0" />
+            <TextField fx:id="taskNameTextField" layoutX="519.0" layoutY="212.0" />
+            <TextField fx:id="taskProjectIdTextField" layoutX="519.0" layoutY="300.0" />
+            <TextField fx:id="ownerIdTextField" layoutX="519.0" layoutY="389.0" />
+            <Label layoutX="345.0" layoutY="40.0" text="Add new Task">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="236.0" layoutY="127.0" text="Task ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="236.0" layoutY="215.0" text="Task name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="239.0" layoutY="303.0" text="Project ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="240.0" layoutY="392.0" text="Owner ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="saveTaskButton" layoutX="247.0" layoutY="483.0" mnemonicParsing="false" onAction="#addNewTask" text="Save">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="closeButton" layoutX="549.0" layoutY="483.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Cancel">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
